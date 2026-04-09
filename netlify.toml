@@ -1,6 +1,6 @@
 [build]
   base = "elexia-app"
-  publish = "elexia-app/dist"
+  publish = "dist"
   command = "npm run build"
 
 [[redirects]]
