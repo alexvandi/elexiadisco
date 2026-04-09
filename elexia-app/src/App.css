@@ -356,9 +356,10 @@
     right: auto;
     bottom: auto;
     width: 60%;
-    max-width: 300px;
+    max-width: 280px;
     margin: -100px auto 0;
     z-index: 3;
+    animation: float 4s ease-in-out infinite;
   }
   .device-cluster {
     flex-direction: column;
@@ -366,25 +367,89 @@
   .mac-mockup {
     width: 100%;
   }
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 150px 24px 60px;
+    padding: 140px 20px 60px;
   }
   .navbar {
     top: 16px;
-    width: 95%;
-    padding: 12px 20px;
+    width: calc(100% - 32px);
+    padding: 12px 0;
+    justify-content: center;
   }
   .nav-links, .nav-actions {
     display: none;
   }
+  .hero h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+  }
   .hero-ctas {
     flex-direction: column;
+    width: 100%;
+    gap: 16px;
   }
-  .cta-section, .features-section, .showcase-container {
-    padding-left: 24px;
-    padding-right: 24px;
+  .hero-ctas .btn {
+    width: 100%;
+  }
+  .showcase-container {
+    padding: 0 20px 80px;
+  }
+  .device-cluster {
+    margin-top: 40px;
+  }
+  .iphone-wrapper {
+    width: 75%;
+    margin-top: -60px;
+  }
+  .features-section {
+    padding: 80px 20px;
+  }
+  .section-header {
+    margin-bottom: 48px;
+  }
+  .section-header h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .feature-card {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+  .cta-section {
+    padding: 80px 20px;
+  }
+  .cta-box {
+    padding: 60px 24px;
+    border-radius: 24px;
+  }
+  .cta-box h2 {
+    font-size: 2.2rem;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .footer-legal {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .footer-legal a {
+    margin-left: 0 !important;
   }
 }
