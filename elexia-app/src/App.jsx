@@ -72,8 +72,7 @@ function App() {
             <span className="text-gradient">Come Mai Prima.</span>
           </h1>
           <p>
-            Dal layout di sala al walk-in istantaneo, passando per l'integrazione TheFork in tempo reale. 
-            Il gestionale web che eleva l'operatività del tuo locale portandola nel futuro.
+            Stanco di gruppi WhatsApp infiniti e messaggi da chiunque per aggiungere un tavolo o un omaggio? Ogni tavolo, ogni ospite, ogni euro — tutto in un'unica piattaforma, in tempo reale.
           </p>
           <div className="hero-ctas">
             <button className="btn btn-primary">Richiedi Demo Completa</button>
@@ -172,24 +171,15 @@ function App() {
             </ul>
           </div>
           <div className="feature-split-visual">
-            <div className="tavoli-duo-grid">
-              <div className="split-screen-mockup">
-                <div className="split-mac-header">
-                  <div className="mac-dot close"></div>
-                  <div className="mac-dot min"></div>
-                  <div className="mac-dot max"></div>
-                  <span className="split-mac-title">Dettagli Prenotazione</span>
-                </div>
-                <img src="/dettagli_prenotazione.PNG" alt="Dettagli Prenotazione" />
+            <div className="split-screen-mockup">
+              <div className="split-mac-header">
+                <div className="mac-dot close"></div>
+                <div className="mac-dot min"></div>
+                <div className="mac-dot max"></div>
+                <span className="split-mac-title">Gestione Sala</span>
               </div>
-              <div className="split-screen-mockup">
-                <div className="split-mac-header">
-                  <div className="mac-dot close"></div>
-                  <div className="mac-dot min"></div>
-                  <div className="mac-dot max"></div>
-                  <span className="split-mac-title">Stato e Saldo</span>
-                </div>
-                <img src="/stato_prenotazioni.PNG" alt="Stato Prenotazioni" />
+              <div className="split-screen-16-9">
+                <img src="/da_pc.png" alt="Gestione Sala" />
               </div>
             </div>
           </div>
@@ -342,7 +332,7 @@ function App() {
         {/* Contabilità — Gestione Rapida */}
         <section className="feature-split-section feature-split-reversed">
           <div className="feature-split-visual">
-            <div className="split-screen-mockup">
+            <div className="split-screen-mockup contabilita-pagamento-mockup">
               <div className="split-mac-header">
                 <div className="mac-dot close"></div>
                 <div className="mac-dot min"></div>
@@ -378,7 +368,6 @@ function App() {
           {/* Role Cards */}
           <div className="team-roles-grid">
             <div className="team-role-card">
-              <div className="team-role-icon">👑</div>
               <div className="team-role-content">
                 <h4>Account Admin</h4>
                 <p>Il titolare o l'organizzatore dell'evento. Ha accesso completo a ogni sezione: tavoli, omaggi, prenotazioni, statistiche e contabilità. Vede in tempo reale ogni modifica effettuata da PR e Staff tramite il pannello notifiche.</p>
@@ -386,7 +375,6 @@ function App() {
               </div>
             </div>
             <div className="team-role-card">
-              <div className="team-role-icon">🎤</div>
               <div className="team-role-content">
                 <h4>Promoter (PR)</h4>
                 <p>Ogni PR ha il proprio account nominativo e inserisce le proprie prenotazioni e liste omaggi. L'Admin può impostare un limite massimo di omaggi per ciascun PR, mantenendo il pieno controllo sui numeri della serata.</p>
@@ -394,7 +382,6 @@ function App() {
               </div>
             </div>
             <div className="team-role-card">
-              <div className="team-role-icon">🔐</div>
               <div className="team-role-content">
                 <h4>Ingressista Tavoli</h4>
                 <p>Account dedicato al personale che gestisce l'ingresso ai tavoli. Può registrare arrivi e pagamenti in tempo reale direttamente dalla propria postazione, senza accedere alle aree riservate all'Admin.</p>
@@ -402,7 +389,6 @@ function App() {
               </div>
             </div>
             <div className="team-role-card">
-              <div className="team-role-icon">✅</div>
               <div className="team-role-content">
                 <h4>Ingressista Omaggi</h4>
                 <p>Account separato per chi gestisce l'ingresso degli omaggi. Vede solo la lista omaggi dell'evento in corso e può effettuare check-in con un click — senza accedere a nessun'altra sezione.</p>
