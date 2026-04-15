@@ -9,9 +9,16 @@ const SHOWCASE_TABS = [
 ];
 
 
+function scrollToTavoli(e) {
+  e.preventDefault();
+  document.getElementById('tavoli')?.scrollIntoView({ behavior: 'smooth' });
+}
+
 function App() {
   const [activeTab, setActiveTab] = useState('tavoli');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [demoOpen, setDemoOpen] = useState(false);
+  const [formSent, setFormSent] = useState(false);
 
   useEffect(() => {
     // Adding noise overlay strictly via DOM to avoid React rendering issues
@@ -40,7 +47,7 @@ function App() {
           <a href="#agente-ai">Agente AI</a>
         </div>
         <div className="nav-actions">
-          <button className="btn btn-secondary" style={{ padding: '12px 24px', fontSize: '14px' }}>Accedi al Gestionale</button>
+          <a href="https://elexia-disco.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '12px 24px', fontSize: '14px' }}>Accedi al Gestionale</a>
         </div>
         {/* Hamburger mobile */}
         <button className="nav-hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
@@ -57,7 +64,7 @@ function App() {
           <a href="#contabilita" onClick={() => setMenuOpen(false)}>Contabilità</a>
           <a href="#team"        onClick={() => setMenuOpen(false)}>Team</a>
           <a href="#agente-ai"   onClick={() => setMenuOpen(false)}>Agente AI</a>
-          <button className="btn btn-primary" style={{marginTop:'8px',width:'100%'}}>Accedi al Gestionale</button>
+          <a href="https://elexia-disco.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{marginTop:'8px',width:'100%',textAlign:'center'}}>Accedi al Gestionale</a>
         </div>
       )}
 
@@ -75,8 +82,8 @@ function App() {
             Stanco di gruppi WhatsApp infiniti e messaggi da chiunque per aggiungere un tavolo o un omaggio? Ogni tavolo, ogni ospite, ogni euro — tutto in un'unica piattaforma, in tempo reale.
           </p>
           <div className="hero-ctas">
-            <button className="btn btn-primary">Richiedi Demo Completa</button>
-            <button className="btn btn-secondary">Scopri i Moduli</button>
+            <button className="btn btn-primary" onClick={() => setDemoOpen(true)}>Richiedi Demo Completa</button>
+            <a href="#tavoli" className="btn btn-secondary" onClick={scrollToTavoli}>Scopri i Moduli</a>
           </div>
         </section>
 
@@ -548,11 +555,59 @@ function App() {
           <h2>Pronto a smettere di<br />rincorrere fogli di carta?</h2>
           <p>Richiedi una demo gratuita e scopri come ELEXIA trasforma la gestione della tua serata — senza cambiare nulla nel tuo locale, solo migliorandolo.</p>
           <div className="final-cta-actions">
-            <button className="btn btn-primary final-cta-btn">Richiedi Demo Gratuita →</button>
-            <button className="btn btn-secondary final-cta-btn">Scrivici su WhatsApp</button>
+            <a href="#tavoli" className="btn btn-primary final-cta-btn" onClick={scrollToTavoli}>Richiedi Demo Gratuita →</a>
+            <a href="https://wa.me/393456923071" target="_blank" rel="noopener noreferrer" className="btn btn-secondary final-cta-btn">Scrivici su WhatsApp</a>
           </div>
         </section>
       </main>
+
+      {/* Demo Contact Modal */}
+      {demoOpen && (
+        <div className="modal-overlay" onClick={() => { setDemoOpen(false); setFormSent(false); }}>
+          <div className="modal-box" onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => { setDemoOpen(false); setFormSent(false); }}>✕</button>
+            {formSent ? (
+              <div className="modal-success">
+                <div className="modal-success-icon">✓</div>
+                <h3>Richiesta inviata!</h3>
+                <p>Ti contatteremo entro 24 ore per organizzare la tua demo.</p>
+              </div>
+            ) : (
+              <>
+                <div className="feature-split-badge" style={{marginBottom:'16px'}}>Richiedi Demo</div>
+                <h3>Scopri ELEXIA<br /><span className="text-gradient">dal vivo</span></h3>
+                <p style={{color:'var(--text-muted)',marginBottom:'28px',fontSize:'0.95rem'}}>Compila il form e ti ricontattiamo entro 24 ore per una demo personalizzata.</p>
+                <form
+                  action="https://formsubmit.co/mariangelabiondi1966@gmail.com"
+                  method="POST"
+                  onSubmit={() => setFormSent(true)}
+                >
+                  <input type="hidden" name="_subject" value="Nuova richiesta demo – ELEXIA" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  <div className="modal-field">
+                    <label>Nome e Cognome</label>
+                    <input type="text" name="nome" required placeholder="Es. Marco Rossi" />
+                  </div>
+                  <div className="modal-field">
+                    <label>Telefono / WhatsApp</label>
+                    <input type="tel" name="telefono" required placeholder="+39 333 000 0000" />
+                  </div>
+                  <div className="modal-field">
+                    <label>Nome del Locale</label>
+                    <input type="text" name="locale" required placeholder="Es. Club Milano" />
+                  </div>
+                  <div className="modal-field">
+                    <label>Email (opzionale)</label>
+                    <input type="email" name="email" placeholder="tuaemail@esempio.com" />
+                  </div>
+                  <button type="submit" className="btn btn-primary" style={{width:'100%',marginTop:'8px'}}>Invia Richiesta →</button>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
+      )}
 
       <footer className="footer">
         <div className="footer-brand">

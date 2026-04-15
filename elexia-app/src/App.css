@@ -1316,12 +1316,11 @@
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    position: relative !important;
     top: 12px;
     width: calc(100% - 24px) !important;
     padding: 0 16px !important;
     height: 56px;
-    border-radius: 18px;
+    border-radius: 100px;
   }
   /* Logo rimane a sinistra dentro nav-brand */
   .nav-brand {
@@ -1560,6 +1559,36 @@
     object-position: top;
   }
 
+  /* Tabella contabilità: non esce dallo schermo */
+  .contabilita-mockup {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .contabilita-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 10px 14px;
+    max-width: 100%;
+  }
+  .ctable {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+    word-break: break-word;
+  }
+  .ctable th:nth-child(1),
+  .ctable td:nth-child(1) { width: 72px; }
+  .ctable th:nth-child(2),
+  .ctable td:nth-child(2) { width: 40px; }
+  .ctable th:nth-child(3),
+  .ctable td:nth-child(3) { width: 52px; }
+  .ctable th:nth-child(4),
+  .ctable td:nth-child(4) { width: auto; }
+  .ctable th:nth-child(5),
+  .ctable td:nth-child(5) { width: 80px; }
+  .ctable th:nth-child(6),
+  .ctable td:nth-child(6) { width: 52px; text-align: right; }
+
   /* === TEAM === */
   .team-section {
     padding: 52px 20px 48px;
@@ -1673,3 +1702,107 @@
   /* === SCREEN CAPTION === */
   .screen-caption { font-size: 12px; }
 }
+/* === DEMO MODAL === */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-box {
+  position: relative;
+  background: rgba(12,12,14,0.97);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(10,232,102,0.1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  color: var(--text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.12); color: var(--text-main); }
+
+.modal-box h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.modal-field label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.modal-field input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.modal-field input:focus {
+  border-color: var(--accent-primary);
+}
+.modal-field input::placeholder { color: var(--text-muted); }
+
+.modal-success {
+  text-align: center;
+  padding: 20px 0;
+}
+.modal-success-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(10,232,102,0.15);
+  color: var(--accent-primary);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.modal-success h3 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+.modal-success p { color: var(--text-muted); }
