@@ -1281,275 +1281,395 @@
 .mobile-menu a:last-of-type { border-bottom: none; }
 .mobile-menu a:hover { color: var(--accent-primary); }
 
-/* Media Queries */
+/* =============================================
+   TABLET — max 1024px
+   ============================================= */
 @media (max-width: 1024px) {
   .iphone-wrapper {
     position: relative;
     right: auto;
     bottom: auto;
-    width: 60%;
-    max-width: 280px;
-    margin: -100px auto 0;
+    width: 50%;
+    max-width: 260px;
+    margin: -80px auto 0;
     z-index: 3;
     animation: float 4s ease-in-out infinite;
   }
-  .device-cluster {
-    flex-direction: column;
-  }
-  .mac-mockup {
-    width: 100%;
-  }
-  .features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
+  .device-cluster { flex-direction: column; }
+  .mac-mockup { width: 100%; }
+  .features-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 }
 
+/* =============================================
+   MOBILE — max 768px
+   Redesign completo mantenendo desktop intatto
+   ============================================= */
 @media (max-width: 768px) {
-  .hero {
-    padding: 140px 20px 60px;
-  }
-  .navbar {
-    top: 16px;
-    width: calc(100% - 32px);
-    padding: 12px 0;
-    justify-content: center;
-  }
-  .nav-links, .nav-actions {
-    display: none;
-  }
-  .nav-hamburger {
-    display: flex;
-  }
-  .mobile-menu {
-    display: flex;
-  }
-  /* Sfondo meno verde su mobile */
+
+  /* === GLOBAL === */
   html, body {
-    background-image: radial-gradient(ellipse 100% 60% at 50% -10%, rgba(10, 232, 102, 0.07), transparent 100%) !important;
+    background-image: radial-gradient(ellipse 120% 50% at 50% -5%, rgba(10,232,102,0.07), transparent 70%) !important;
   }
 
-  /* Fix navbar layout on mobile: brand centrato, hamburger a destra */
+  /* === NAVBAR: logo sx | ELEXIA centro | hamburger dx === */
   .navbar {
-    display: grid !important;
-    grid-template-columns: 40px 1fr 40px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: relative !important;
+    top: 12px;
+    width: calc(100% - 24px) !important;
     padding: 0 16px !important;
-    width: calc(100% - 32px) !important;
+    height: 56px;
+    border-radius: 18px;
   }
+  /* Logo rimane a sinistra dentro nav-brand */
   .nav-brand {
-    grid-column: 2;
-    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: static;
   }
+  .nav-brand img {
+    height: 28px;
+    display: block;
+  }
+  /* Testo ELEXIA centrato in assoluto */
+  .brand-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.15rem;
+    letter-spacing: 0.15em;
+    pointer-events: none;
+  }
+  .nav-links, .nav-actions { display: none; }
   .nav-hamburger {
-    grid-column: 3;
-    justify-self: end;
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  /* Mobile dropdown */
+  .mobile-menu {
+    display: flex;
+    top: 76px;
+    left: 12px;
+    right: 12px;
+    border-radius: 16px;
+    padding: 16px 20px;
+  }
+  .mobile-menu a {
+    font-size: 17px;
+    padding: 15px 0;
+    letter-spacing: 0.01em;
+  }
+
+  /* === HERO === */
+  .hero {
+    padding: 110px 20px 56px;
+    gap: 0;
+  }
+  .badge {
+    font-size: 10px;
+    padding: 5px 12px;
+    margin-bottom: 20px;
   }
   .hero h1 {
-    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    font-size: clamp(2.6rem, 10.5vw, 3.4rem);
+    line-height: 1.06;
     margin-bottom: 16px;
+    letter-spacing: -0.025em;
+    word-break: keep-all;
+    hyphens: none;
   }
   .hero p {
-    font-size: 1.1rem;
-    margin-bottom: 32px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    max-width: 100%;
+    margin-bottom: 28px;
   }
   .hero-ctas {
     flex-direction: column;
     width: 100%;
-    gap: 16px;
+    gap: 10px;
   }
   .hero-ctas .btn {
     width: 100%;
+    padding: 15px 24px;
+    font-size: 0.9rem;
   }
+
+  /* === SHOWCASE (PC + PHONE) === */
   .showcase-container {
-    padding: 0 20px 80px;
+    padding: 0 16px 60px;
   }
   .device-cluster {
-    margin-top: 40px;
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 0;
   }
+  .mac-mockup {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .mac-header {
+    height: 38px;
+    padding: 0 12px;
+  }
+  .mac-dot { width: 9px; height: 9px; }
+  .showcase-tabs {
+    max-width: 240px;
+  }
+  .showcase-tab {
+    font-size: 9px;
+    padding: 4px 8px;
+  }
+  .mac-screens { background: #0a0a0a; }
   .iphone-wrapper {
-    width: 75%;
-    margin-top: -60px;
+    width: 44%;
+    max-width: 180px;
+    margin: -48px auto 0;
+    animation: float 5s ease-in-out infinite;
   }
+  .iphone-mockup {
+    border-radius: 32px;
+    border-width: 10px;
+  }
+
+  /* === "NON È UN SEMPLICE GESTIONALE" === */
   .features-section {
-    padding: 80px 20px;
+    padding: 56px 20px 48px;
   }
   .section-header {
-    margin-bottom: 48px;
+    margin-bottom: 36px;
   }
   .section-header h2 {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    line-height: 1.05;
   }
-  .features-grid {
+  .section-header p {
+    font-size: 0.9rem !important;
+    line-height: 1.65;
+  }
+
+  /* Stats strip: 2×2 */
+  .stats-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 16px;
+    margin: 0 0 40px;
+    overflow: hidden;
+  }
+  .stat-divider { display: none; }
+  .stat-item {
+    padding: 22px 14px;
+    border-right: 1px solid var(--border-glass);
+    border-bottom: 1px solid var(--border-glass);
+    align-items: center;
+  }
+  .stat-item:nth-child(4),
+  .stat-item:nth-child(8) { border-right: none; }
+  .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+  .stat-value { font-size: 1.9rem; }
+  .stat-label { font-size: 11px; }
+
+  /* === FEATURE SPLIT SECTIONS === */
+  .feature-split-section {
     grid-template-columns: 1fr;
-    gap: 24px;
+    padding: 52px 20px 48px;
+    gap: 28px;
   }
-  .feature-card {
-    padding: 32px 24px;
-    border-radius: 20px;
+  /* testo sempre sopra, immagine sotto */
+  .feature-split-reversed { direction: ltr; }
+  .feature-split-reversed .feature-split-text { order: 1; }
+  .feature-split-reversed .feature-split-visual { order: 2; }
+
+  .feature-split-badge {
+    font-size: 10px;
+    padding: 4px 12px;
+    margin-bottom: 14px;
   }
-  .cta-section {
-    padding: 80px 20px;
+  .feature-split-text h2 {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+    line-height: 1.04;
+    margin-bottom: 14px;
   }
-  .cta-box {
-    padding: 60px 24px;
-    border-radius: 24px;
+  .feature-split-text > p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 20px;
   }
-  .cta-box h2 {
-    font-size: 2.2rem;
+  .feature-split-list { gap: 10px; }
+  .feature-split-list li { font-size: 13px; }
+
+  /* Immagini mockup nelle sezioni: altezza contenuta */
+  .split-screen-mockup {
+    border-radius: 10px;
   }
+  .split-mac-header {
+    height: 28px;
+    padding: 0 10px;
+    gap: 5px;
+  }
+  .split-mac-title { font-size: 9.5px; }
+  .mac-dot { width: 8px; height: 8px; }
+
+  .split-screen-mockup img,
+  .feature-split-visual .split-screen-mockup img {
+    max-height: 210px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* 16:9 box nelle sezioni: riduci altezza */
+  .split-screen-16-9 {
+    aspect-ratio: 16 / 8;
+  }
+
+  /* === SEZIONE TAVOLI === */
+  .tavoli-duo-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* === CONTABILITÀ mockup === */
+  .contabilita-mockup { border-radius: 12px; }
+  .contabilita-header {
+    font-size: 9px;
+    padding: 10px 14px;
+  }
+  .contabilita-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cstat-item { padding: 10px 4px; }
+  .cstat-value { font-size: 0.9rem; }
+  .cstat-label { font-size: 7.5px; }
+  .contabilita-table-wrap {
+    padding: 10px 12px 14px;
+    overflow-x: auto;
+  }
+  .ctable { font-size: 10px; min-width: 420px; }
+  .ctable th { font-size: 8.5px; padding-bottom: 8px; }
+  .ctable td { padding: 8px 4px 8px 0; }
+  .badge-pill { font-size: 8.5px; padding: 2px 6px; }
+  /* Gestione rapida immagine */
+  .contabilita-pagamento-mockup img {
+    max-height: 200px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* === TEAM === */
+  .team-section {
+    padding: 52px 20px 48px;
+    gap: 40px;
+  }
+  .team-header h2 {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    margin: 12px 0 14px;
+  }
+  .team-header p { font-size: 0.9rem; }
+  .team-roles-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .team-role-card {
+    padding: 18px 18px;
+    border-radius: 16px;
+  }
+  .team-role-content h4 { font-size: 1rem; margin-bottom: 8px; }
+  .team-role-content p { font-size: 12.5px; line-height: 1.55; }
+  .team-bottom-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 40px;
+  }
+  .team-bottom-text h3 {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+    margin: 12px 0 14px;
+  }
+  .team-bottom-text p { font-size: 0.9rem; }
+
+  /* === AGENTE AI === */
+  .ai-section {
+    grid-template-columns: 1fr;
+    padding: 52px 20px 48px;
+    gap: 32px;
+  }
+  .ai-heading {
+    font-size: clamp(2.6rem, 11vw, 3.4rem);
+    line-height: 1.03;
+    margin-bottom: 16px;
+  }
+  .ai-text > p { font-size: 0.92rem; max-width: 100%; }
+  .ai-whatsapp-badge { font-size: 11.5px; }
+  .ai-chat-window { border-radius: 16px; }
+  .ai-chat-header { padding: 12px 16px; }
+  .ai-chat-avatar { width: 36px; height: 36px; font-size: 11px; }
+  .ai-chat-name { font-size: 13px; }
+  .ai-chat-status { font-size: 11px; }
+  .ai-chat-messages { padding: 14px 12px; gap: 10px; }
+  .ai-msg.user p, .ai-msg.bot p { font-size: 12.5px; padding: 9px 12px; }
+  .ai-tavoli-list { padding: 9px 12px; }
+  .ai-tavoli-list li { font-size: 12.5px; }
+
+  /* === TESTIMONIANZE === */
+  .testimonials-section { padding: 52px 20px 48px; }
+  .testimonials-header { margin-bottom: 36px; }
+  .testimonials-header h2 {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+    line-height: 1.04;
+  }
+  .testimonials-header p { font-size: 0.9rem; }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .testimonial-card {
+    padding: 22px 18px;
+    border-radius: 16px;
+    gap: 16px;
+  }
+  .tquote { font-size: 2.2rem; }
+  .testimonial-card > p { font-size: 13.5px; line-height: 1.65; }
+  .tauthor-name { font-size: 13px; }
+  .tauthor-role { font-size: 11px; }
+
+  /* === FINAL CTA === */
+  .final-cta-section { padding: 72px 20px 64px; }
+  .final-cta-section h2 {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+    line-height: 1.04;
+    margin-bottom: 18px;
+  }
+  .final-cta-section p { font-size: 0.92rem; margin-bottom: 32px; }
+  .final-cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .final-cta-btn {
+    width: 100%;
+    text-align: center;
+    padding: 16px 24px !important;
+  }
+
+  /* === FOOTER === */
   .footer {
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
     text-align: center;
-    padding: 40px 20px;
+    padding: 36px 20px;
+    font-size: 13px;
   }
   .footer-legal {
     display: flex;
     gap: 20px;
     justify-content: center;
   }
-  .footer-legal a {
-    margin-left: 0 !important;
-  }
+  .footer-legal a { margin-left: 0 !important; }
 
-  /* ---- Feature Split Sections ---- */
-  .feature-split-section {
-    grid-template-columns: 1fr;
-    padding: 64px 20px;
-    gap: 40px;
-  }
-  /* reversed: reset order so text always comes first on mobile */
-  .feature-split-reversed {
-    direction: ltr;
-  }
-  .feature-split-reversed .feature-split-visual {
-    order: 2;
-  }
-  .feature-split-reversed .feature-split-text {
-    order: 1;
-  }
-  .feature-split-text h2 {
-    font-size: clamp(1.9rem, 8vw, 2.6rem);
-  }
-
-  /* Tavoli duo grid → stack */
-  .tavoli-duo-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  /* Prenotazioni */
-  .prenotazioni-screen-wrap { gap: 12px; }
-
-  /* Omaggi stack already column */
-
-  /* ---- Stats Strip ---- */
-  .stats-strip {
-    flex-wrap: wrap;
-    border-radius: 16px;
-    margin: 0 0 48px;
-  }
-  .stat-item {
-    flex: 1 1 45%;
-    padding: 24px 16px;
-    border-bottom: 1px solid var(--border-glass);
-  }
-  .stat-divider { display: none; }
-
-  /* ---- Contabilità mockup ---- */
-  .contabilita-stats {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .cstat-item { padding: 12px 6px; }
-  .cstat-value { font-size: 1rem; }
-  .ctable { font-size: 10px; }
-  .ctable th, .ctable td { padding: 7px 4px 7px 0; }
-
-  /* ---- Team ---- */
-  .team-section {
-    padding: 64px 20px;
-    gap: 48px;
-  }
-  .team-roles-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .team-bottom-split {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding-top: 48px;
-  }
-  .team-role-card {
-    padding: 20px;
-    gap: 14px;
-  }
-
-  /* ---- AI Section ---- */
-  .ai-section {
-    grid-template-columns: 1fr;
-    padding: 64px 20px;
-    gap: 40px;
-  }
-  .ai-heading {
-    font-size: clamp(2rem, 9vw, 3rem);
-  }
-  .ai-text > p { max-width: 100%; }
-
-  /* ---- Testimonianze ---- */
-  .testimonials-section {
-    padding: 64px 20px;
-  }
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .testimonials-header h2 {
-    font-size: clamp(2rem, 9vw, 3rem);
-  }
-  .testimonial-card { padding: 24px 20px; }
-
-  /* ---- Final CTA ---- */
-  .final-cta-section {
-    padding: 80px 20px;
-  }
-  .final-cta-section h2 {
-    font-size: clamp(2rem, 9vw, 3rem);
-  }
-  .final-cta-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  .final-cta-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* ---- Mac mockup on mobile ---- */
-  .mac-mockup { border-radius: 10px; }
-  .mac-header { height: 40px; }
-  .showcase-tab { font-size: 10px; padding: 5px 10px; }
-  .split-screen-mockup { border-radius: 10px; }
-  .split-mac-header { height: 28px; }
-  .split-mac-title { font-size: 10px; }
-
-  /* ---- Immagini sezione Tavoli: limita altezza ---- */
-  .tavoli-duo-grid .split-screen-mockup img {
-    max-height: 180px;
-    object-fit: cover;
-    object-position: top;
-  }
-
-  /* ---- Immagini sezione Contabilità: limita altezza ---- */
-  .feature-split-visual .split-screen-mockup img {
-    max-height: 220px;
-    object-fit: cover;
-    object-position: top;
-  }
-
-  /* ---- Contabilità mockup tabella: scroll orizzontale ---- */
-  .contabilita-table-wrap {
-    overflow-x: auto;
-    padding: 12px;
-  }
-  .ctable { min-width: 460px; }
-  .contabilita-stats { grid-template-columns: repeat(3,1fr); }
+  /* === SCREEN CAPTION === */
+  .screen-caption { font-size: 12px; }
 }
