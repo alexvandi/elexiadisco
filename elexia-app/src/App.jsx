@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 
 const SHOWCASE_TABS = [
-  { id: 'tavoli',        label: 'Tavoli',        img: '/da_pc.png' },
-  { id: 'omaggi',        label: 'Omaggi',        img: '/omaggi_pc.PNG' },
-  { id: 'prenotazioni',  label: 'Prenotazioni',  img: '/prenotazioni.PNG' },
-  { id: 'contabilita',   label: 'Contabilità',   img: '/contabilita_pc.PNG' },
+  { id: 'tavoli', label: 'Tavoli', img: '/da_pc.png' },
+  { id: 'omaggi', label: 'Omaggi', img: '/omaggi_pc.PNG' },
+  { id: 'prenotazioni', label: 'Prenotazioni', img: '/prenotazioni.PNG' },
+  { id: 'contabilita', label: 'Contabilità', img: '/contabilita_pc.PNG' },
 ];
 
 
@@ -59,12 +59,12 @@ function App() {
       {/* Mobile dropdown menu */}
       {menuOpen && (
         <div className="mobile-menu">
-          <a href="#tavoli"      onClick={() => setMenuOpen(false)}>Tavoli</a>
-          <a href="#omaggi"      onClick={() => setMenuOpen(false)}>Omaggi</a>
+          <a href="#tavoli" onClick={() => setMenuOpen(false)}>Tavoli</a>
+          <a href="#omaggi" onClick={() => setMenuOpen(false)}>Omaggi</a>
           <a href="#contabilita" onClick={() => setMenuOpen(false)}>Contabilità</a>
-          <a href="#team"        onClick={() => setMenuOpen(false)}>Team</a>
-          <a href="#agente-ai"   onClick={() => setMenuOpen(false)}>Agente AI</a>
-          <a href="https://elexia-disco.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{marginTop:'8px',width:'100%',textAlign:'center'}}>Accedi al Gestionale</a>
+          <a href="#team" onClick={() => setMenuOpen(false)}>Team</a>
+          <a href="#agente-ai" onClick={() => setMenuOpen(false)}>Agente AI</a>
+          <a href="https://elexia-disco.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ marginTop: '8px', width: '100%', textAlign: 'center' }}>Accedi al Gestionale</a>
         </div>
       )}
 
@@ -132,10 +132,9 @@ function App() {
         {/* Features Split Section */}
         <section id="piattaforma" className="features-section extended-features">
           <div className="section-header">
-            <h2>Non è un semplice gestionale. <br />È il motore del tuo locale.</h2>
+            <h2>Il motore del tuo locale. <br />Sempre a tua disposizione.</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.25rem', maxWidth: '800px', margin: '0 auto' }}>
-              Abbiamo ricostruito la gestione delle prenotazioni da zero, mettendo al centro la velocità operativa
-              nella gestione dei turni e la massima sincronizzazione con i motori di prenotazione esterni.
+              Ogni prenotazione, ogni tavolo, ogni ospite - sincronizzati in tempo reale. Nessun ritardo,nessuna confusione, nessun errore. Tu pensi alla serata, ELEXIA pensa al resto.
             </p>
           </div>
 
@@ -168,7 +167,7 @@ function App() {
           <div className="feature-split-text">
             <div className="feature-split-badge">Sezione Tavoli</div>
             <h2>La tua sala,<br /><span className="text-gradient">sempre sotto controllo</span></h2>
-            <p>La mappa interattiva mostra in tempo reale lo stato di ogni tavolo. Gestisci arrivi, aggiungi spostamenti in pochi secondi — senza alzarti dalla cassa.</p>
+            <p>La mappa interattiva mostra in tempo reale lo stato di ogni tavolo. Gestisci arrivi, aggiungi spostamenti in pochi secondi — sempre e quando vuoi tu.</p>
             <ul className="feature-split-list">
               <li><span className="check">✓</span> Stato fondo aggiornato in tempo reale per tutto lo staff</li>
               <li><span className="check">✓</span> Aggiungi arrivo, sposta tavolo, aggiungi coperti</li>
@@ -213,12 +212,12 @@ function App() {
           <div className="feature-split-text">
             <div className="feature-split-badge">Sezione Prenotazioni</div>
             <h2>Tutto il quadro,<br />in un solo colpo<br /><span className="text-gradient">d'occhio</span></h2>
-            <p>Dimentica i foglietti e le chat. Tutte le prenotazioni in lista, filtrabili per evento, sala e stato. Il riepilogo economico è sempre aggiornato in tempo reale.</p>
+            <p>Dimentica i fogli e le chat. Tutte le prenotazioni in lista, filtrabili per evento, sala e stato. Il riepilogo economico è sempre aggiornato in tempo reale.</p>
             <ul className="feature-split-list">
               <li><span className="check">✓</span> Totale ospiti, incasso e occupazione in tempo reale</li>
               <li><span className="check">✓</span> Filtri per evento, sala, stato e ricerca per nome o telefono</li>
               <li><span className="check">✓</span> Stato tavolo: Prenotata, In corso, Cancellata</li>
-              <li><span className="check">✓</span> Dettaglio coperti, PR assegnato, saldo versato e residuo</li>
+              <li><span className="check">✓</span> Dettaglio PR assegnato, saldo versato e residuo</li>
             </ul>
           </div>
         </section>
@@ -362,6 +361,38 @@ function App() {
           </div>
         </section>
 
+        {/* Security Section */}
+        <section className="security-section">
+          <div className="security-heading">
+            <div className="feature-split-badge">Sicurezza</div>
+            <h2>Nessun dato esce<br /><span className="text-gradient">dal tuo controllo.</span></h2>
+            <p>Tutto ciò che gestisci su ELEXIA è crittografato end-to-end e accessibile solo dal tuo team.</p>
+          </div>
+          <div className="security-pillars">
+            <div className="sec-pillar">
+              <div className="sec-pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /><circle cx="12" cy="16" r="1.5" fill="currentColor" /></svg>
+              </div>
+              <h4>Crittografia End-to-End</h4>
+              <p>Ogni dato trasmesso è cifrato in transito e a riposo. Nessuno, nemmeno noi, può leggerlo.</p>
+            </div>
+            <div className="sec-pillar">
+              <div className="sec-pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.5" /><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /><path d="M17 13l1.5 1.5L21 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </div>
+              <h4>Accesso Ruolo-Specifico</h4>
+              <p>Ogni membro del team vede solo ciò che gli compete. Zero accessi indesiderati.</p>
+            </div>
+            <div className="sec-pillar">
+              <div className="sec-pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="M8 9h8M8 13h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /><path d="M15 16l2 2 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </div>
+              <h4>Dati Contabili al Sicuro</h4>
+              <p>Incassi, movimenti e saldi sono protetti e visibili solo agli account autorizzati.</p>
+            </div>
+          </div>
+        </section>
+
         {/* Sezione Team */}
         <section id="team" className="team-section">
 
@@ -407,7 +438,7 @@ function App() {
           {/* Account panel + Notifiche */}
           <div className="team-bottom-split">
             <div className="team-bottom-visual">
-              <div className="feature-split-badge" style={{marginBottom:'20px'}}>Gestione account ELEXIA</div>
+              <div className="feature-split-badge" style={{ marginBottom: '20px' }}>Gestione account ELEXIA</div>
               <div className="split-screen-mockup">
                 <div className="split-mac-header">
                   <div className="mac-dot close"></div>
@@ -417,13 +448,13 @@ function App() {
                 </div>
                 <img src="/account.png" alt="Pannello Gestione Account" />
               </div>
-              <p className="screen-caption" style={{marginTop:'14px'}}>Pannello Gestione Account con Staff di Servizio e Promoter — tutto configurabile dall'Admin.</p>
+              <p className="screen-caption" style={{ marginTop: '14px' }}>Pannello Gestione Account con Staff di Servizio e Promoter — tutto configurabile dall'Admin.</p>
             </div>
             <div className="team-bottom-text">
               <div className="feature-split-badge">Notifiche in tempo reale</div>
               <h3>Sai sempre chi ha<br />fatto cosa, e quando</h3>
-              <p>Il pannello notifiche dell'Admin registra in ordine cronologico ogni modifica effettuata da qualsiasi account slave — nuove prenotazioni, omaggi inseriti, pagamenti registrati, modifiche ai tavoli.</p>
-              <ul className="feature-split-list" style={{marginTop:'28px'}}>
+              <p>Il pannello notifiche dell'Admin registra in ordine cronologico ogni modifica effettuata da qualsiasi account — nuove prenotazioni, omaggi inseriti, pagamenti registrati, modifiche ai tavoli.</p>
+              <ul className="feature-split-list" style={{ marginTop: '28px' }}>
                 <li><span className="check">✓</span> Feed notifiche cronologico in tempo reale</li>
                 <li><span className="check">✓</span> Ogni azione riporta l'account che l'ha eseguita</li>
                 <li><span className="check">✓</span> Nessuna modifica passa inosservata</li>
@@ -440,14 +471,14 @@ function App() {
             <span className="ai-whatsapp-badge">
               <span className="ai-wa-dot"></span> Agente AI su WhatsApp
             </span>
-            <div className="feature-split-badge" style={{marginTop:'28px', marginBottom:'16px', display:'inline-block'}}>Intelligenza Artificiale</div>
+            <div className="feature-split-badge" style={{ marginTop: '28px', marginBottom: '16px', display: 'inline-block' }}>Intelligenza Artificiale</div>
             <h2 className="ai-heading">
-              Ti lavora<br />
-              mentre tu ti godi<br />
+              Lavora in autonomia<br />
+              mentre tu controlli<br />
               <em className="text-gradient">la serata</em>
             </h2>
             <p>L'agente AI di ELEXIA è attivo su WhatsApp 24 ore su 24. Scrivile cosa vuoi fare — lei aggiorna tutto in tempo reale senza che tu debba aprire nessuna app.</p>
-            <ul className="feature-split-list" style={{marginTop:'28px'}}>
+            <ul className="feature-split-list" style={{ marginTop: '28px' }}>
               <li><span className="check">✓</span> Inserisce omaggi e aggiorna liste</li>
               <li><span className="check">✓</span> Crea prenotazioni tavoli direttamente via chat</li>
               <li><span className="check">✓</span> Risponde su tavoli liberi, prezzi e disponibilità</li>
@@ -516,23 +547,23 @@ function App() {
           <div className="testimonials-grid">
             <div className="testimonial-card">
               <div className="tquote">"</div>
-              <p>Prima gestivo tutto su Excel, con 3 gruppi WhatsApp diversi e un foglio di carta all'ingresso. Ora apro ELEXIA e <span className="t-highlight">ho tutto in un secondo</span>. Non riesco a credere di aver aspettato così tanto.</p>
+              <p>Prima gestivo tutto su Excel, con 3 gruppi WhatsApp diversi e un foglio di carta all'ingresso. Ora apro ELEXIA e <span className="t-highlight">ho tutto in un secondo</span>. </p>
               <div className="testimonial-author">
-                <div className="tauthor-avatar" style={{background:'#0a6640'}}>M</div>
+                <div className="tauthor-avatar" style={{ background: '#0a6640' }}>M</div>
                 <div>
-                  <span className="tauthor-name">Marco D.</span>
-                  <span className="tauthor-role">Proprietario – Club Milano</span>
+                  <span className="tauthor-name">Marco Damiani</span>
+                  <span className="tauthor-role">Proprietario</span>
                 </div>
               </div>
             </div>
             <div className="testimonial-card">
               <div className="tquote">"</div>
-              <p>I miei PR inseriscono gli omaggi da soli, io li vedo in tempo reale sul telefono. Niente più messaggi su WhatsApp alle 3 di notte per sapere chi deve entrare. <span className="t-highlight">ELEXIA ha cambiato la serata.</span></p>
+              <p>I miei PR inseriscono gli omaggi da soli, io li vedo in tempo reale sul telefono. Niente più messaggi su WhatsApp adurante la serata per sapere chi deve entrare. <span className="t-highlight"></span></p>
               <div className="testimonial-author">
-                <div className="tauthor-avatar" style={{background:'#0d5c4a'}}>S</div>
+                <div className="tauthor-avatar" style={{ background: '#0d5c4a' }}>S</div>
                 <div>
-                  <span className="tauthor-name">Sara C.</span>
-                  <span className="tauthor-role">Event Manager – Riviera Club</span>
+                  <span className="tauthor-name">Sara Canuti</span>
+                  <span className="tauthor-role">Event Manager Milano</span>
                 </div>
               </div>
             </div>
@@ -540,10 +571,10 @@ function App() {
               <div className="tquote">"</div>
               <p>La contabilità era un disastro — foglietti, calcolatrice, sperare di non sbagliare. Con ELEXIA <span className="t-highlight">so esattamente quanto ho incassato</span> per ogni tavolo, diviso tra carta e contanti, in tempo reale.</p>
               <div className="testimonial-author">
-                <div className="tauthor-avatar" style={{background:'#1a3d2e'}}>L</div>
+                <div className="tauthor-avatar" style={{ background: '#1a3d2e' }}>L</div>
                 <div>
-                  <span className="tauthor-name">Lorenzo B.</span>
-                  <span className="tauthor-role">Titolare – Nyx Lounge</span>
+                  <span className="tauthor-name">Lorenzo Biagiotti</span>
+                  <span className="tauthor-role">Titolare club</span>
                 </div>
               </div>
             </div>
@@ -555,7 +586,7 @@ function App() {
           <h2>Pronto a smettere di<br />rincorrere fogli di carta?</h2>
           <p>Richiedi una demo gratuita e scopri come ELEXIA trasforma la gestione della tua serata — senza cambiare nulla nel tuo locale, solo migliorandolo.</p>
           <div className="final-cta-actions">
-            <a href="#tavoli" className="btn btn-primary final-cta-btn" onClick={scrollToTavoli}>Richiedi Demo Gratuita →</a>
+            <button className="btn btn-primary final-cta-btn" onClick={() => setDemoOpen(true)}>Richiedi Demo Gratuita →</button>
             <a href="https://wa.me/393456923071" target="_blank" rel="noopener noreferrer" className="btn btn-secondary final-cta-btn">Scrivici su WhatsApp</a>
           </div>
         </section>
@@ -574,9 +605,9 @@ function App() {
               </div>
             ) : (
               <>
-                <div className="feature-split-badge" style={{marginBottom:'16px'}}>Richiedi Demo</div>
+                <div className="feature-split-badge" style={{ marginBottom: '16px' }}>Richiedi Demo</div>
                 <h3>Scopri ELEXIA<br /><span className="text-gradient">dal vivo</span></h3>
-                <p style={{color:'var(--text-muted)',marginBottom:'28px',fontSize:'0.95rem'}}>Compila il form e ti ricontattiamo entro 24 ore per una demo personalizzata.</p>
+                <p style={{ color: 'var(--text-muted)', marginBottom: '28px', fontSize: '0.95rem' }}>Compila il form e ti ricontattiamo entro 24 ore per una demo personalizzata.</p>
                 <form
                   action="https://formsubmit.co/mariangelabiondi1966@gmail.com"
                   method="POST"
@@ -601,7 +632,7 @@ function App() {
                     <label>Email (opzionale)</label>
                     <input type="email" name="email" placeholder="tuaemail@esempio.com" />
                   </div>
-                  <button type="submit" className="btn btn-primary" style={{width:'100%',marginTop:'8px'}}>Invia Richiesta →</button>
+                  <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '8px' }}>Invia Richiesta →</button>
                 </form>
               </>
             )}
@@ -610,15 +641,43 @@ function App() {
       )}
 
       <footer className="footer">
-        <div className="footer-brand">
-          <span style={{ fontFamily: 'var(--font-heading)', fontWeight: '700', fontSize: '20px' }}>ELEXIA DISCO</span>
+        <div className="footer-top">
+          {/* Col 1 — Brand */}
+          <div className="footer-col footer-col-brand">
+            <div className="footer-logo">
+              <img src="/logo.png" alt="Elexia Logo" onError={e => e.target.style.display='none'} />
+              <span>ELEXIA</span>
+            </div>
+            <p className="footer-tagline">Ogni serata, sempre sotto controllo.<br />Vivi la notte, noi pensiamo al resto.</p>
+          </div>
+
+          {/* Col 2 — Legal */}
+          <div className="footer-col">
+            <h5 className="footer-col-title">Informazioni legali</h5>
+            <ul className="footer-col-list">
+              <li>ELEXIA</li>
+              <li>P.IVA: 04819570401</li>
+              <li>Via Curiel 7/C</li>
+              <li>47039 Savignano sul Rubicone (FC)</li>
+            </ul>
+          </div>
+
+          {/* Col 3 — Contacts */}
+          <div className="footer-col">
+            <h5 className="footer-col-title">Contatti</h5>
+            <ul className="footer-col-list">
+              <li><a href="tel:+393345245133">Tel: 334 5245133</a></li>
+              <li><a href="https://wa.me/393456923071" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            </ul>
+          </div>
         </div>
-        <div className="footer-copyright">
-          © {new Date().getFullYear()} Elexia Systems. Architettura e Sviluppo in Cloud.
-        </div>
-        <div className="footer-legal">
-          <a href="#" style={{ color: 'inherit', textDecoration: 'none', marginLeft: '20px' }}>API Docs</a>
-          <a href="#" style={{ color: 'inherit', textDecoration: 'none', marginLeft: '20px' }}>Privacy & RLS</a>
+
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} ELEXIA. Tutti i diritti riservati.</span>
+          <div className="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Termini di Servizio</a>
+          </div>
         </div>
       </footer>
     </div>
